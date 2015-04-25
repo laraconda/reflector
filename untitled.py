@@ -23,7 +23,7 @@ def invert_lines(my_view, edit):
 		line = my_view.substr(region_line)
 		flipped_line = line[::-1]
 		for char_to_mirror in flipped_line:
-			mirror_char = get_mirror_char(char_to_mirror)
+			mirror_char = get_mirror_char(char_to_mirror).decode('utf-8')
 			flipped_replaced_line = flipped_line.replace(char_to_mirror, mirror_char)
 		my_view.replace(edit, region_line, flipped_line)
 	return None
